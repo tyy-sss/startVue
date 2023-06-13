@@ -1,6 +1,8 @@
 import { createStore } from 'vuex'
 import createPersistedState from 'vuex-persistedstate'
 import loading from './modules/loading'
+import menu from './modules/menu'
+import global from './modules/global'
 
 const store = createStore({
   state: {
@@ -13,6 +15,8 @@ const store = createStore({
   },
   modules: {
     loading,
+    menu,
+    global
   },
   /* vuex数据持久化配置 */
   plugins: [

@@ -3,7 +3,7 @@
     <div class="content-container">
       <div class="head-line">
         <img
-          src="@/assets/imges/error.png"
+          src="@/assets/images/error.png"
           width="150"
         />
       </div>

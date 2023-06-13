@@ -3,14 +3,19 @@ import loading from "@/assets/js/utils/loading";
 
 const routes = [
   {
-    path: '/',
-    name: 'main',
-    component: () => import("../views/Main.vue")
-  },
-  {
     path: "/test",
     name: "test",
     component: () => import("../views/Test.vue"),
+  },
+  {
+    path:'/',
+    name:'login',
+    component: () => import("../views/not-login/LoginView.vue"),
+  },
+  {
+    path: "/error",
+    name: "error",
+    component: () => import("../views/Error.vue"),
   },
 ];
 
