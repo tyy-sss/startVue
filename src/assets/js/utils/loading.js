@@ -21,9 +21,4 @@ const resetLoading = () => {
   store.commit("setLoading", false);
 };
 // 导出
-export default {
-  startLoading,
-  endLoading,
-  resetLoading,
-  loadingNum,
-};
+export { startLoading, endLoading, resetLoading };

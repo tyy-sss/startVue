@@ -14,25 +14,20 @@
     </template>
   </div>
 </template>
-<script>
-import { Location } from "@element-plus/icons";
+<script setup>
+import router from "@/router";
 
-export default {
-  name: "home-menu",
-  props: ["menuData"],
-  components: { Location },
-  methods: {
-    //点击菜单
-    clickMenu(item) {
-      //当前路由与跳转路由不一致时跳转
-      if (
-        this.$route.path !== item.path &&
-        !(this.$route.path === "/Home" && item.path === "/")
-      ) {
-        this.$router.push(item.path);
-      }
-    },
-  },
+const props = defineProps({ menuData: Array });
+const menuData = props.menuData;
+
+const clickMenu = (item) => {
+  //当前路由与跳转路由不一致时跳转
+  if (
+    router.path !== item.path &&
+    !(router.path === "/home" && item.path === "/")
+  ) {
+    router.push(item.path);
+  }
 };
 </script>
 <style src="@/assets/css/common/home-menu/home-menu.css">

@@ -13,6 +13,13 @@ import * as ElIcon from "@element-plus/icons";
 // 请求全局
 import "@/api/request.js";
 
+
+//动态菜单路由的生成
+const addMenu = () => {
+  store.commit("addMenu")
+}
+addMenu()
+
 const app = createApp(App);
 app.use(store).use(router).use(ElementPlus).use(VueAxios, axios).mount("#app");
 

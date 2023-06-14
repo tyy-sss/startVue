@@ -1,18 +1,17 @@
-.header-container {
+.common-header {
+  padding: 0;
   height: 60px;
-  position: fixed;
-  background :RGB(255,255,255);
-  position:fixed;
-  justify-content: space-between;
-  align-items: center;
-  -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,.05);
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
-}
-.pic {
-  width: 30px;
-  height: 30px;
-}
-.l-content {
+  background-color: RGB(255, 255, 255);
   display: flex;
+  justify-content: flex-end;
   align-items: center;
+}
+.user {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 5vh;
+}
+::v-deep .el-dropdown:focus-visible{
+  border: 0;
 }

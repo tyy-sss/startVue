@@ -15,7 +15,7 @@
         <p>您可以返回首页，或者尝试刷新</p>
       </div>
       <div class="buttons-container">
-        <router-link to="Home">去首页</router-link>
+        <router-link to="home">去首页</router-link>
       </div>
     </div>
   </body>

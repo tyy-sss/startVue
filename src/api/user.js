@@ -1,6 +1,5 @@
 //统一接口管理
 import request from "./request";
-import store from "@/store";
 
 /**
  * 登录

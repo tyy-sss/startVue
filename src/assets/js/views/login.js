@@ -56,14 +56,15 @@ export default {
           this.form.username.passWord = this.loginForm.password;
           this.form.username = JSON.stringify(this.form.username);
           const res = await login(this.form);
+          console.log(res,"res")
           this.form.username = JSON.parse(this.form.username);
           if (res.data.access_token !== undefined) {
             //TODO: 登录成功，保存token
             this.$store.commit("setToken", res.data.access_token);
             //登录成功获取 user的信息
-            const resp = await getUserRole();
+            // const resp = await getUserRole();
             // sessionStorage.setItem("user",resp.data.data);
-            this.$router.replace("/Home");
+            this.$router.replace("/home");
           } else {
             ElMessage(res.data.msg);
             this.warn = "notExist";

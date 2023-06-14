@@ -4,6 +4,7 @@ import router from "@/router";
 import store from "@/store";
 
 const pz = "http://192.168.50.139:63010/";
+const lyh = "http://192.168.50.245:63010/";
 //1.利用axios对象的方法create，去创建一个axios实例。
 const requests = axios.create({
   //配置对象
@@ -15,12 +16,13 @@ const requests = axios.create({
 
 //请求拦截器：
 requests.interceptors.request.use((config) => {
-  if (config.showLoading) {
+  if (config.showLoading === undefined) {
     //解析和上传到后端的时候进行loading加载显示
+    config.showLoading = true;
     startLoading();
   }
   const token = store.state.global.token;
-  if (token !== null || token !== '') {
+  if (token !== null || token !== "") {
     config.headers.Authorization = `Bearer ${store.state.global.token}`;
   }
   return config;
@@ -32,7 +34,7 @@ requests.interceptors.request.use((config) => {
 //响应拦截器
 requests.interceptors.response.use(
   (res) => {
-    if(res.config.showLoading){
+    if (res.config.showLoading) {
       endLoading();
     }
     return res;

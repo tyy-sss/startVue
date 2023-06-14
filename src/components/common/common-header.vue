@@ -1,28 +1,28 @@
 <template>
-  <el-row class="header-container">
-    <el-col class="l-content" :span="2"></el-col>
-    <el-col class="r-content" :span="1">
-      <el-dropdown>
-        <div>
-          <img class="pic" src="@/assets/images/personal.png" />
-        </div>
+  <div class="common-header">
+    <div class="right">
+      <el-dropdown @command="handleClick">
+        <span class="el-dropdown-link">
+          <img class="user" src="@/assets/images/personal.png" />
+        </span>
         <template #dropdown>
           <el-dropdown-menu>
-            <el-dropdown-item @click="exit">退出</el-dropdown-item>
+            <el-dropdown-item>个人中心</el-dropdown-item>
+            <el-dropdown-item command="exit">退出</el-dropdown-item>
           </el-dropdown-menu>
         </template>
       </el-dropdown>
-    </el-col>
-  </el-row>
+    </div>
+  </div>
 </template>
 <script setup>
-//退出
-const exit = () => {
-  //消除token
-  sessionStorage.clear();
-  window.open("/", "_self");
+import { useRouter } from "vue-router";  
+const router = useRouter();
+const handleClick = (command) => {
+  if (command === "exit") {
+    router.push({ path: "/login" });
+  }
 };
-
 </script>
 <style src="@/assets/css/common/common-header.css">
 </style>
