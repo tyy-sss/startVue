@@ -28,6 +28,9 @@ requests.interceptors.request.use((config) => {
   return config;
 }),
   (error) => {
+    router.push({
+      path: "/error",
+    });
     return Promise.reject(error);
   };
 

@@ -7,6 +7,7 @@
 .add {
   display: flex;
   flex: 2.5;
+  align-items: center;
 }
 
 .add-excel {

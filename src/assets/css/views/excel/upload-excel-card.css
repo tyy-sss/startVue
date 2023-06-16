@@ -1,0 +1,23 @@
+.content {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .upload {
+    width: 90%;
+  }
+  .big {
+    color: #32325d;
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .small {
+    color: #32325d;
+    font-size: 18px;
+  }
+  .text > div {
+    margin-top: 10px;
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 14px;
+  }
