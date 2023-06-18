@@ -1,0 +1,70 @@
+/* 设置周时间显示 */
+.week-btn-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.change-week {
+  border-radius: 50%;
+  border: 1px solid;
+  padding: 10px;
+}
+.week-btn-wrap > div {
+  margin: 10px;
+}
+/* 设置表格展示 */
+.week-table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* 设置头部与内容宽度一致 */
+.table-week,
+.w-time-period-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.table-header {
+  border: 1px solid;
+}
+.week-item {
+  border-right: 1px solid;
+  height: 80px;
+  min-width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.week-item:last-child{
+  border:0px;
+}
+.w-day-item {
+  display: flex;
+  justify-content: center;
+}
+/* 显示内容信息 */
+.w-time-period-col,
+.w-row-day {
+  display: flex;
+}
+.w-things,
+.w-time-period {
+  height: 100%;
+  min-width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.w-row-day {
+  border: 1px solid;
+  border-top: 0;
+}
+.w-things {
+  border-left: 1px solid;
+}
+/* 设置当前日期的显示 */
+.isNowDay {
+  color: red;
+}

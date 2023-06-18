@@ -1,5 +1,7 @@
 // 时间格式化
 
+import { formatDate } from "@vueuse/shared";
+
 // 把标准时间变成yyyy-mm-dd HH:MM:SS
 const formatTime = (date) => {
   return handleTime(date);
@@ -34,4 +36,5 @@ const handleTime = (date) => {
   var t = y + "-" + m + "-" + d + " " + h + ":" + i + ":" + s;
   return t;
 };
+
 export { formatTime,formatTimeOne }

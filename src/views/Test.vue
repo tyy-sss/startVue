@@ -1,6 +1,6 @@
 <template>
-    <loading/>
+  <week/>
 </template>
 <script setup>
-import loading from "@/components/utils/loading.vue";
+import week from "@/components/schedule/week.vue";
 </script>
