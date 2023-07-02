@@ -1,6 +1,6 @@
 <template>
-  <div class="small-div">
-    <div class="small-div-header">
+  <div class="box small-div">
+    <div class="box-header">
       <h3>客流量预测</h3>
     </div>
     <div class="content">
@@ -112,7 +112,6 @@ const addExcelData = (data) => {
 // 打印表单数据
 const handleExcelExport = () => {
   outExcel.value.outExcel(data.tableData)
-  // excelExoprt.value.outExcel(data.tableData);
 };
 // 修改时间，搜索客流量
 const changeTime = () => {
@@ -290,6 +289,7 @@ onMounted(() => {
 </script>
 <style src="@/assets/css/views/header/add-header.css" scoped>
 </style>
-<style src="@/assets/css/views/audit/aduit.css" scoped>
+<style src="@/assets/css/common/content.css" scoped>
 </style>
-      
+<style src="@/assets/css/common/box.css" scoped>
+</style>

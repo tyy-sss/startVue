@@ -1,0 +1,42 @@
+.tag-group,
+.rule-item {
+  display: flex;
+}
+.tag-group div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tag-group__title {
+  font-size: 17px;
+  letter-spacing: 0;
+  min-width: 100px;
+}
+.tag-item,
+.add-rule {
+  margin: 5px;
+  font-size: 15px;
+}
+.inforamtion {
+  padding-top: 20px;
+  padding-left: 50px;
+}
+.rule-title {
+  min-width: 80px;
+  text-align: right;
+  padding: 8px;
+  font-size: 16px;
+}
+/* 设置多选框的样式 */
+.el-checkbox{
+  border-radius: 50px;
+}
+.rule-item .el-input{
+  max-width: 150px;
+}
+.rule-item-input{
+  padding: 0.2em 1em;
+}
+.checkbox-item{
+  padding: 5px;
+}

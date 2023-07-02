@@ -1,9 +1,10 @@
 import axios from "axios";
 import { startLoading, endLoading } from "@/assets/js/utils/loading";
+import { ElMessage } from "element-plus";
 import router from "@/router";
 import store from "@/store";
 
-const pz = "http://192.168.50.139:63010/";
+const pz = "http://192.168.50.137:63010/";
 const lyh = "http://192.168.50.245:63010/";
 //1.利用axios对象的方法create，去创建一个axios实例。
 const requests = axios.create({

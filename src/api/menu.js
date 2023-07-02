@@ -5,6 +5,5 @@ export const menuList = () => {
   return request({
     url: "/auth/get-menus",
     method: 'GET',
-    // showLoading: false
   });
 };

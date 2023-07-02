@@ -20,15 +20,15 @@ const changeWeek = (date) => {
   console.log(date, "修改之后的开始时间");
 };
 
-const checkScheduleNews =(row)=>{
-    console.log(row,"数据")
-}
+const checkScheduleNews = (row) => {
+  console.log(row, "数据");
+};
 </script>
 <style scoped>
-.week-information{
-    border: 1px solid;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 5px;
+.week-information {
+  border: 1px solid;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px;
 }
 </style>
