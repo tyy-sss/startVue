@@ -1,12 +1,12 @@
 <template>
   <div class="tag-group">
     <div class="tag-group__title">任务说明:</div>
-    <el-checkbox-group @change="a" v-model="data.taskRuleLists">
+    <el-checkbox-group @change="handleChangeTask" v-model="data.taskRuleLists">
       <div class="checkbox-item">
         <el-checkbox
           v-for="item in data.ruleData"
           :key="item.ruleId"
-          :label="item.ruleName"
+          :label="item.ruleId"
           size="large"
           border
         >
@@ -131,29 +131,27 @@ const validateTaskName = (rule, value, callback) => {
   if (!value) {
     return callback(new Error("请输入规则名"));
   }
-  if (data.isRepeat) {
-    if (value !== data.ruleShow.taskName) {
-      isRepeatTaskName(value).then((res) => {
-        if (res.data.code !== store.state.global.success) {
-          callback(new Error("规则名字已重复"));
-        } else {
-          return callback();
-        }
-      });
+  if(data.isRepeat) {
+    isRepeatTaskName(value).then((res) => {
+    if (res.data.code !== store.state.global.success) {
+      callback(new Error("规则名字已重复"));
     } else {
-      callback();
+      return callback();
     }
-  } else {
-    callback();
+  });
+  }else{
+    return callback();
   }
+ 
 };
 // 数据
 const form = ref(null);
+const emit = defineEmits(["getTaskList"]);
 const positios = defineProps({ positions: Object });
 const data = reactive({
   ruleData: [],
-  dialogVisible: false,
   isRepeat: false,
+  dialogVisible: false,
   ruleShow: [],
   taskRule: {
     formula: [{ required: true, message: "请输入规则名称", trigger: "blur" }],
@@ -164,14 +162,11 @@ const data = reactive({
   },
   taskRuleLists: [],
 });
-defineExpose({
-  taskRuleLists: data.taskRuleLists
-})
 // 添加规则
 const addTask = () => {
   data.ruleShow = {};
   handleOpenDia();
-  data.isRepeat = false;
+  data.isRepeat = true;
 };
 // 确定添加规则
 const changeOrAddRule = () => {
@@ -182,7 +177,7 @@ const changeOrAddRule = () => {
       return false;
     } else {
       const ruleData = handleAddRuleData(data.ruleShow, 5);
-      console.log(ruleData)
+      console.log(ruleData);
       addOrChangeRule(ruleData).then((res) => {
         if (res.data.code === store.state.global.success) {
           ElMessage.success("操作成功");
@@ -201,7 +196,7 @@ const handleOpenDia = () => {
 };
 // 关闭对话框
 const handleCloseDia = () => {
-  handleClose();
+  // handleClose();
   handleCloseForm();
 };
 const handleCloseForm = () => {
@@ -211,7 +206,7 @@ const handleCloseForm = () => {
 // 修改规则
 const changeTask = (ruleId) => {
   handleOpenDia();
-  data.isRepeat = true;
+  data.isRepeat = false;
   data.ruleData.filter((element) => {
     if (element.ruleId === ruleId) {
       data.ruleShow = handleBackRuleData(element, element.ruleTypeId);
@@ -226,9 +221,10 @@ const getAllTaskRule = () => {
     }
   });
 };
-const a =()=>{
-  alert(data.taskRuleLists)
-}
+// 修改任务列表
+const handleChangeTask = () => {
+  emit("getTaskList", data.taskRuleLists);
+};
 onMounted(() => {
   getAllTaskRule();
 });

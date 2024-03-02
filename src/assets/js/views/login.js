@@ -62,8 +62,8 @@ export default {
             //TODO: 登录成功，保存token
             this.$store.commit("setToken", res.data.access_token);
             //登录成功获取 user的信息
-            // const resp = await getUserRole();
-            // sessionStorage.setItem("user",resp.data.data);
+            const resp = await getUserRole();
+            sessionStorage.setItem("user",resp.data.data);
             this.$router.replace("/home");
           } else {
             ElMessage(res.data.msg);

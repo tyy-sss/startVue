@@ -63,7 +63,7 @@ import { onMounted, reactive, ref } from "vue";
 import store from "@/store";
 // 界面
 import excelExport from "@/components/excel/excel-export.vue";
-import excelLeadingIn from "../excel/excel-leading-in.vue";
+import excelLeadingIn from "@/components/excel/excel-leading-in.vue";
 import { ElMessage } from "element-plus";
 // 数据
 import { auditExport } from "@/assets/js/common/excel/excel-information";

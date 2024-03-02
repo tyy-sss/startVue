@@ -24,8 +24,10 @@ const handleLeadingIn = () =>{
 // 向后端发送添加数据
 const addExcelData = (data) =>{
     data = JSON.parse(JSON.stringify(data))
-    uploadExcel.value.dialogTableVisible = false;
-    emit("addExcelData", data);
+    setTimeout(()=>{
+        uploadExcel.value.dialogTableVisible = false;
+        emit("addExcelData", data);
+    },1000);
 }
 </script>
 <style>

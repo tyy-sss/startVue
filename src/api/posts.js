@@ -11,5 +11,6 @@
    return request({
      url: "/information/get-position",
      method: "GET",
+     showLoading: false,
    });
  };

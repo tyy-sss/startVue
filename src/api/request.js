@@ -23,6 +23,7 @@ requests.interceptors.request.use((config) => {
     startLoading();
   }
   const token = store.state.global.token;
+  
   if (token !== null || token !== "") {
     config.headers.Authorization = `Bearer ${store.state.global.token}`;
   }
@@ -38,6 +39,7 @@ requests.interceptors.request.use((config) => {
 //响应拦截器
 requests.interceptors.response.use(
   (res) => {
+    console.log(res);
     if (res.config.showLoading) {
       endLoading();
     }

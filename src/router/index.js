@@ -31,6 +31,43 @@ const routes = [
       },
     ],
   },
+  {
+    path: "/turn",
+    name: "turn",
+    component: () => import("@/views/turn/Main.vue"),
+    children: [
+      {
+        path: "apply-store",
+        name: "apply-store",
+        component: () => import("@/views/turn/ApplyStore.vue"),
+      },
+      {
+        path: "apply-company",
+        name: "apply-company",
+        component: () => import("@/views/turn/ApplyCompany.vue"),
+      },
+      {
+        path: "apply-history",
+        name: "apply-history",
+        component: () => import("@/views/turn/ApplyHistory.vue"),
+      },
+      {
+        path: "apply-handle",
+        name: "apply-handle",
+        component: () => import("@/views/turn/ApplyHandle.vue"),
+      },
+      {
+        path: "apply-news",
+        name: "apply-news",
+        component: () => import("@/views/turn/ApplyNews.vue"),
+      },
+      {
+        path: "apply-employee",
+        name: "apply-employee",
+        component: () => import("@/views/turn/ApplyEmployee.vue"),
+      },
+    ]
+  },
 ];
 
 const router = createRouter({

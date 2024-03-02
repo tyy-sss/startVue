@@ -8,7 +8,7 @@ module.exports = defineConfig({
       port:8081,
       proxy: {
         '/api': {
-          target: 'http://127.0.0.1:8082',     //'服务器真实地址',
+          target: 'http://127.0.0.1:8099',     //'服务器真实地址',
           changeOrigin: true, // 是否跨域
         }
       }

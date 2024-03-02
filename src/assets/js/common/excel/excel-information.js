@@ -12,14 +12,7 @@ const auditExport = reactive({
     endTime: "结束时间",
     audit: "预测顾客流量",
   },
-  jsonData: [
-    {
-      date:  "2023-06-15",
-      startTime: "8:00",
-      endTime: "9:00",
-      audit: "1",
-    },
-  ],
+  jsonData: [{}],
   character: {
     date: { text: "日期", type: "int" },
     startTime: { text: "开始时间", type: "string" },
@@ -31,7 +24,7 @@ const auditExport = reactive({
 const employeeExport = {
   name: "employee",
   show: "员工表",
-  excelName: "员工表",
+  excelName: "下载员工模板表",
   listHander: {
     staffName: "姓名",
     position: "职位",
@@ -61,4 +54,4 @@ const employeeExport = {
   },
 };
 
-export { auditExport };
+export { auditExport, employeeExport };

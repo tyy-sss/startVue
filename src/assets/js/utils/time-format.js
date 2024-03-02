@@ -1,6 +1,6 @@
-// 时间格式化
-
-import { formatDate } from "@vueuse/shared";
+/**
+ * 时间格式化
+ */
 
 // 把标准时间变成yyyy-mm-dd HH:MM:SS
 const formatTime = (date) => {
